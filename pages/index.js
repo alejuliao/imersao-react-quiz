@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Head from 'next/head';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import Link from '../src/components/Link';
 
@@ -61,7 +61,7 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            <form onSubmit={(infosDoEvento)=>{
+            <form onSubmit={(infosDoEvento) => {
               infosDoEvento.preventDefault();
               router.push(`/quiz?name=${name}`);
               console.log('fazendo uma submissao por meio do react');
@@ -69,21 +69,21 @@ export default function Home() {
             }}
             >
               <Input
-              name="nomeDoUsuario"
-              onChange={(infosDoEvento)=>setName(infosDoEvento.target.value)}
-              // <input 
+                name="nomeDoUsuario"
+                onChange={(infosDoEvento) => setName(infosDoEvento.target.value)}
+              // <input
               // onChange={function(infosDoEvento){
               //   //console.log(infosDoEvento.target.value)
               //   //state (estado do component)
               //   setName(infosDoEvento.target.value);
               //   // name = infosDoEvento.target.value
               // }}
-              placeholder="Digite seu nome"
-              value={name}
+                placeholder="Digite seu nome"
+                value={name}
               />
-            <Button type="submit" disabled={name.length === 0}>
-              {`Jogar ${name}`}
-            </Button>
+              <Button type="submit" disabled={name.length === 0}>
+                {`Jogar ${name}`}
+              </Button>
 
             </form>
 
@@ -123,9 +123,12 @@ export default function Home() {
                   </li>
                 );
               })}
-            </ul>          </Widget.Content>
+            </ul>
+            {' '}
+
+          </Widget.Content>
         </Widget>
-        <Footer 
+        <Footer
           as={motion.footer}
           transition={{ delay: 0.5, duration: 0.5 }}
           variants={{
